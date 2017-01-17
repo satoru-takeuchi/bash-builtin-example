@@ -12,7 +12,7 @@ static char *desc[] = {
 	"Show a greeting message.",
 	"",
 	"It's far faster than launching executable file",
-	"because it't not necessary to exec() and fork().",
+	"because it't not necessary to call exec() and fork().",
 	(char *)NULL
 };
 
