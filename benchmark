@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo run hello world command 10000 times
+time (for ((i=0;i<10000;i++)) ; do ./hello >/dev/null ; done)
+
+enable -f ./myhello.so myhello
+echo run hello world builtin command 10000 times
+time (for ((i=0;i<10000;i++)) ; do myhello >/dev/null ; done)
