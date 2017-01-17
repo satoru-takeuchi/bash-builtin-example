@@ -21,6 +21,6 @@ struct builtin myhello_struct = {
 	myhello,		// function called when issueing this command
 	BUILTIN_ENABLED,	// initial flag
 	desc,			// long description
-	"hello",		// short description
+	"myhello",		// short description
 	0,
 };
