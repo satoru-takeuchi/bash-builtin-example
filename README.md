@@ -13,6 +13,9 @@ bash-builtins
 # How to use
 
 ```
+$ make 
+cc     hello.c   -o hello
+cc -L myhello -I/usr/include/bash/ -I/usr/include/bash/include -fpic -shared -o myhello.so myhello.c
 $ ./benchmark 
 run hello world command 10000 times
 
