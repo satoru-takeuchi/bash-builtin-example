@@ -1,11 +1,14 @@
-BINARIES := hello myhello
+TARGETS = hello myhello.so
 
-.PHONY: all clean
+.PHONY: all clean benchmark
 
-all: hello myhello
+all: $(TARGETS)
 
-myhello: myhello.c
-	cc -L $@ -I/usr/include/bash/ -I/usr/include/bash/include -fpic -shared -o myhello.so myhello.c
+myhello.so: myhello.c
+	$(CC) $(CFLAGS) -I/usr/include/bash -I/usr/include/bash/include -fpic -shared -o $@ $^
 
 clean:
-	rm -rf *.o *.so *~ $(BINARIES)
+	-$(RM) $(TARGETS)
+
+benchmark: all
+	./benchmark
